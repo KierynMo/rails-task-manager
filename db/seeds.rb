@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+p 'deleting tasks'
+Task.delete_all
+p 'all tasks deleted'
+p 'seeding 10 tasks'
+10.times { Task.create!(title: Faker::Hipster.word, details: Faker::Hipster.sentence) }
+p 'seeded db'
